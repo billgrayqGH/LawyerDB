@@ -1,0 +1,45 @@
+﻿@model LawyerDBapp.Models.Lawyer
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("AddOrEdit", "Lawyer", FormMethod.Post, new {onsubmit="return SubmitForm(this)"}))
+{
+    @Html.HiddenFor(model => model.LawyerID)
+    <div class="form-group">
+        @Html.LabelFor(model => model.Firstname, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Firstname)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Lastname, new { @class = "control-label" })
+        @Html.EditorFor(model => model.Lastname, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Lastname)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.LSnumber, new { @class = "control-label" })
+        @Html.EditorFor(model => model.LSnumber, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.LSnumber)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.City, new { @class = "control-label" })
+        @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.City)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PostalCode, new { @class = "control-label" })
+        @Html.EditorFor(model => model.PostalCode, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.PostalCode)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.LegalService, new { @class = "control-label" })
+        @Html.EditorFor(model => model.LegalService, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.LegalService)
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+        <input type="reset" value="Reset" class="btn btn-warning" />
+    </div>
+}
